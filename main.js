@@ -7,4 +7,8 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 const response = await fetch('neighborhoods.geojson');
 const data = await response.json();
 
-L.geoJSON(data).addTo(map);
+L.geoJSON(data).bindTooltip(
+  layer => {
+  return layer.feature.properties['mapname'].toString();
+  }
+  ).addTo(map);
