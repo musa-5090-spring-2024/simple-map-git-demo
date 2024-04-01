@@ -9,7 +9,7 @@ const data = await response.json();
 
 L.geoJSON(data, {
   style: {
-    color: '#444',
+    color: '#666',
     weight: 1,
     fillOpacity: 0.2,
   }
