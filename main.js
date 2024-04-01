@@ -13,4 +13,8 @@ L.geoJSON(data, {
     weight: 1,
     fillOpacity: 0.2,
   }
-}).addTo(map);
+}).bindTooltip(
+  layer => {
+    return layer.feature.properties['mapname'].toString();
+  }
+).addTo(map);
